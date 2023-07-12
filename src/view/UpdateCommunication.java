@@ -16,10 +16,15 @@ public class UpdateCommunication {
 	
 	public void communication() {
 		System.out.println("What is the employee's id?");
-		id = read.nextInt();
-		System.out.println("\n\nPlease register the new employee's informations:\n");
-		System.out.println("\nFirst Name:");
-		fName= read.nextLine();
+		id = Integer.parseInt(read.nextLine());
+		getNewInfo();
+	}
+	
+	public void getNewInfo() {
+		
+		System.out.println("Please digit the name of the employee bellow:\n");
+		System.out.println("\nFirst name");
+		fName = read.nextLine();
 		System.out.println("\nLast Name:");
 		lName= read.nextLine();
 		System.out.println("\nFunction:");
@@ -27,6 +32,7 @@ public class UpdateCommunication {
 		System.out.println("\nSalary:");
 		salary = read.nextFloat();
 		
+		update();
 	}
 	
 	public void update() {

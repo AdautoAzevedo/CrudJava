@@ -61,7 +61,7 @@ public class DBOperations {
 		int value = 0;	//This value will store the value that is received in the executeUpdate() sql function.
 		try {
 			Connection conection = new Connector().getConnection();
-			PreparedStatement result = conection.prepareStatement("DELETE FROM employee WHERE firstName = ? and lastName = ?");
+			PreparedStatement result = conection.prepareStatement("DELETE FROM employees WHERE firstName = ? and lastName = ?");
 			
 			result.setString(1, fName);
 			result.setString(2, lName);
@@ -82,10 +82,10 @@ public class DBOperations {
 		int value = 0;	//This value will store the value that is received in the executeUpdate() sql function.
 		try {
 			Connection conection = new Connector().getConnection();
-			PreparedStatement result = conection.prepareStatement("UPDATE employees SET firstName = (?), lastName = (?), function = (?), salary=(?) WHERE id = ?");
+			PreparedStatement result = conection.prepareStatement("UPDATE employees SET lastName = ?, firstName = ?, job = ?, salary = ? WHERE id = ?");
 			
-			result.setString(1, emp.getfName());
-			result.setString(2, emp.getLName());
+			result.setString(1, emp.getLName());
+			result.setString(2, emp.getfName());
 			result.setString(3, emp.getFunction());
 			result.setFloat(4, emp.getSalary());
 			result.setInt(5, id);
