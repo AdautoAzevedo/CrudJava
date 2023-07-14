@@ -14,6 +14,7 @@ public class Options {
 		System.out.println("2-Insert a new employee");
 		System.out.println("3-Delete a employee's register");
 		System.out.println("4-Update a employee's register");
+		System.out.println("5-Get employee by Id");
 		
 		operation = read.nextInt();
 		operationCall(operation);
@@ -38,8 +39,12 @@ public class Options {
 			UpdateCommunication upCom = new UpdateCommunication();
 			upCom.communication();
 			break;
+		case 5:
+			GetByIdCommunication getByIdCom = new GetByIdCommunication();
+			getByIdCom.communication();
+			break;
 		default:
-			System.out.println("Please digit a valaid value.");
+			System.out.println("Please digit a valid value.");
 			optionsList();
 			break;
 		}
